@@ -18,7 +18,14 @@ RUN curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o 
 
 # On fixe ici des KEYs aws quelconques utilisées par localstack (fake APIs aws)
 # ref : https://docs.aws.amazon.com/fr_fr/cli/latest/userguide/cli-configure-envvars.html
-RUN export AWS_ACCESS_KEY_ID=123 && export AWS_SECRET_ACCESS_KEY=AZERTY && export AWS_DEFAULT_REGION=us-east-1 && export AWS_DEFAULT_OUTPUT=text
+# export AWS_ACCESS_KEY_ID=123 && export AWS_SECRET_ACCESS_KEY=AZERTY && export AWS_DEFAULT_REGION=us-east-1 && export AWS_DEFAULT_OUTPUT=text
+# Attention RUN export ne persiste pas les var d'env !!!!
+
+ENV AWS_ACCESS_KEY_ID=123 \
+    AWS_SECRET_ACCESS_KEY=AZERTY \
+    AWS_DEFAULT_REGION=us-east-1 \
+    AWS_DEFAULT_OUTPUT=text
+
 
 ## Autre methode directement dans le terminal : # aws2 configure  --> qui demande les inputs puis crée ./aws/config et ./aws/credentials 
 
