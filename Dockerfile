@@ -14,7 +14,7 @@ RUN yum install etcd -y && yum install cronie -y
 # RUN yum install awscli -y
 
 #
-RUN curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install && aws2 --version
+RUN curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install && aws2 --version && rm -f awscliv2.zip
 
 # On fixe ici des KEYs aws quelconques utilisées par localstack (fake APIs aws)
 # ref : https://docs.aws.amazon.com/fr_fr/cli/latest/userguide/cli-configure-envvars.html
