@@ -4,7 +4,7 @@ FROM openshift/base-centos7
 USER 0
 
 #
-RUN yum install etcd -y
+RUN yum install etcd -y && yum install cronie -y
 
 # Install de l'ancienne version d'aws :
 # RUN yum install awscli -y
