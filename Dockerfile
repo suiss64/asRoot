@@ -1,7 +1,7 @@
 FROM openshift/base-centos7
 
 # The user the container should run as (root)
-USER 0
+# USER 0
 
 COPY ./etcd-1.sh .
 COPY ./etcd-2.sh .
