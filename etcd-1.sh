@@ -3,7 +3,7 @@
 
 # create bucket s3 :
 
-bucketName=$(echo etcd-backup-eu-central-1-$(date +"%Y%m%d%H%M%S"))
+export bucketName=$(echo etcd-backup-eu-central-1-$(date +"%Y%m%d%H%M%S"))
 
 #aws s3 mb s3://$(echo $bucketName)
 
