@@ -3,6 +3,10 @@ FROM openshift/base-centos7
 # The user the container should run as (root)
 USER 0
 
+COPY ./etcd-1.sh .
+
+RUN chmod 777 etcd-1.sh
+
 #
 RUN yum install etcd -y && yum install cronie -y
 
