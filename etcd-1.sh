@@ -9,7 +9,7 @@ export bucketName=$(echo etcd-backup-eu-central-1-$(date +"%Y%m%d%H%M%S"))
 
 # add cron job :
 # echo "* * * * * /opt/app-root/src/etcd-2.sh" >> /etc/crontab
-* * * * * root /opt/app-root/src/etcd-2.sh > /dev/pts/0
+echo "* * * * * root /opt/app-root/src/etcd-2.sh > /dev/pts/0" >> /etc/crontab
 
 # start crontab
 crond
