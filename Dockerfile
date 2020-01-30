@@ -32,3 +32,4 @@ ENV AWS_ACCESS_KEY_ID=123 \
 
 # Do nothing
 CMD while true; do sleep 1; done
+#ENTRYPOINT /entrypoint.sh
