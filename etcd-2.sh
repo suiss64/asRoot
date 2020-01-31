@@ -3,10 +3,10 @@
 
 backupControl ()
 {
-if [ $(aws s3 ls s3://$(echo $bucketName)/ --recursive | wc -l) != "5" ]
+if [ $(aws2 s3 ls s3://$(echo $bucketName)/ --recursive | wc -l) != "5" ]
   then
-   aws s3 rm $(echo $bucketName)/$fileName
-   echo $(aws s3 ls s3://$(echo $bucketName)/ --recursive | wc -l)
+   aws2 s3 rm $(echo $bucketName)/$fileName
+   echo $(aws2 s3 ls s3://$(echo $bucketName)/ --recursive | wc -l)
 fi
 }
 
