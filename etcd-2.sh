@@ -5,7 +5,7 @@ backupControl ()
 {
 if [ $(aws2 --endpoint-url=http://10.128.1.24:4572 s3 ls s3://$(echo $bucketName)/ --recursive | wc -l) != "5" ]
   then
-   aws2 --endpoint-url=http://10.128.1.24:4572 s3 rm $(echo $bucketName)/$fileName
+   aws2 --endpoint-url=http://10.128.1.24:4572 s3 rm s3://$(echo $bucketName)/$fileName
    echo $(aws2 --endpoint-url=http://10.128.1.24:4572 s3 ls s3://$(echo $bucketName)/ --recursive | wc -l)
 fi
 }
