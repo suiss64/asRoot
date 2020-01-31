@@ -6,7 +6,7 @@ FROM openshift/base-centos7
 COPY ./etcd-1.sh .
 COPY ./etcd-2.sh .
 
-RUN chmod 777 etcd-1.sh && chmod 777 etcd-2.sh
+RUN chmod 777 etcd-1.sh && chmod 777 etcd-2.sh && mkdir /tmp/snapshots/
 
 #
 RUN yum install etcd -y && yum install cronie -y
